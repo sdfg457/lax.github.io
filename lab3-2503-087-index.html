@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数字展销平台首页 - 春韵</title>
+    <link rel="stylesheet" href="lab3-2503-087-index.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="xiaohui.webp"  alt="鲁东大学图书网，春韵图书展销平台">
+        </div>
+        <div class="main-title">春韵数字展销平台</div>
+        <nav class="top-nav">
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">图书分类</a></li>
+                <li><a href="#">热门推荐</a></li>
+                <li><a href="#">新书上市</a></li>
+                <li><a href="#">关于我们</a></li>
+            </ul>
+        </nav>
+        <div class="user-status">
+        <span id="loginStatus">未登录</span>
+        <button class="login-btn" onclick="openModal()" id="loginBtn">登录/注册</button>
+        <button class="logout-btn" onclick="logout()" id="logoutBtn" style="display: none;">退出登录</button>
+        </div>
+    </header>
+    <div class="container">
+        <aside class="left-sidebar">
+            <h3>图书分类</h3>
+            <ul>
+                <li><a href="#">文学小说</a></li>
+                <li><a href="#">计算机技术</a></li>
+                <li><a href="#">经管励志</a></li>
+                <li><a href="#">少儿读物</a></li>
+                <li><a href="#">生活艺术</a></li>
+            </ul>
+        </aside>
+
+        <!-- 中间栏：图书展示区 -->
+        <main class="center-content">
+            <!-- 首页Banner -->
+            <div class="banner">
+                <img src="bannce1.webp" alt="春季图书展销季">
+            </div>
+
+            <!-- 热门推荐（浮动排列） -->
+            <section class="hot-books">
+                <h2>热门推荐</h2>
+                <div class="book-list">
+                    <!-- 第一本：鼠标悬停效果（父相子绝） -->
+                    <div class="book-item">
+                        <img src="book1.webp" alt="畅销图书1">
+                        <div class="book-info">
+                            <h4>《深入理解计算机系统》</h4>
+                            <p>￥99.00</p>
+                            <button class="buy-btn">立即购买</button>
+                        </div>
+                    </div>
+                    <div class="book-item">
+                        <img src="book2.webp" alt="畅销图书2">
+                        <div class="book-info">
+                            <h4>《算法导论》</h4>
+                            <p>￥128.00</p>
+                            <button class="buy-btn">立即购买</button>
+                        </div>
+                    </div>
+                    <div class="book-item">
+                        <img src="book3.webp" alt="畅销图书3">
+                        <div class="book-info">
+                            <h4>《Python编程从入门到实践》</h4>
+                            <p>￥89.00</p>
+                            <button class="buy-btn">立即购买</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 新书上市（Table布局） -->
+            <section class="new-books">
+                <h2>新书上市</h2>
+                <table class="new-book-table">
+                    <thead>
+                        <tr>
+                            <th>图书封面</th>
+                            <th>图书名称</th>
+                            <th>作者</th>
+                            <th>定价</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="book6.webp" alt="新书1"></td>
+                            <td>《AI时代的编程思维》</td>
+                            <td>李子熙</td>
+                            <td>￥79.00</td>
+                        </tr>
+                        <tr>
+                            <td><img src="book5.webp" alt="新书2"></td>
+                            <td>《前端开发实战指南》</td>
+                            <td>张小明</td>
+                            <td>￥89.00</td>
+                        </tr>
+                        <tr>
+                            <td><img src="book4.webp" alt="新书3"></td>
+                            <td>《数据结构与算法分析》</td>
+                            <td>王铭瑄</td>
+                            <td>￥99.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+        <!-- 右侧促销信息区域 -->
+    <aside class="right-sidebar">
+         <!-- 顶部限时5折banner -->
+        <div class="promo-banner">
+    <span class="discount-tag">限时5折</span>
+        </div>
+
+  <!-- 促销信息标题 -->
+  <h2 class="section-title">促销信息</h2>
+
+  <!-- 促销卡片列表 -->
+  <div class="promo-list">
+    <!-- 卡片1：全场满减 -->
+    <div class="promo-card">
+      <h3 class="card-title">全场满减活动</h3>
+      <p class="card-desc">满100元减20元，满200元减50元，多买多减！</p>
+    </div>
+
+    <!-- 卡片2：新用户专享 -->
+    <div class="promo-card">
+      <h3 class="card-title">新用户专享</h3>
+      <p class="card-desc">新用户注册即送50元优惠券，首单立减！</p>
+    </div>
+
+    <!-- 卡片3：会员专享折扣 -->
+    <div class="promo-card">
+      <h3 class="card-title">会员专享折扣</h3>
+      <p class="card-desc">VIP会员享受全场9折优惠，还有专属礼品！</p>
+    </div>
+
+    <!-- 卡片4：限时特价 -->
+    <div class="promo-card">
+      <h3 class="card-title">限时特价</h3>
+      <p class="card-desc">精选图书限时特价，低至5折，抢完即止！</p>
+    </div>
+  </div>
+    </aside>
+        
+            
+    </div>
+    
+    <div class="main-container clearfix">
+    </div>
+
+    <!-- 3. 页脚 -->
+    <footer class="footer">
+        <p>© 2026 春韵数字展销平台 版权所有 | 鲁东大学计算机学院实验作品</p>
+    </footer>
+    <!-- 登录/注册弹窗 -->
+<div class="login-modal" id="loginModal">
+    <!-- 弹窗内容（父相） -->
+    <div class="modal-content">
+        <!-- 关闭按钮 -->
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        
+        <!-- 切换标签 -->
+        <div class="modal-tabs">
+            <span class="tab active" onclick="switchTab('login')">登录</span>
+            <span class="tab" onclick="switchTab('register')">注册</span>
+        </div>
+
+        <!-- 登录面板 -->
+        <div class="modal-panel" id="loginPanel">
+            <h3>用户登录</h3>
+            <div class="form-group">
+                <label>用户名：</label>
+                <input type="text" id="loginUser" placeholder="请输入注册的用户名">
+            </div>
+            <div class="form-group">
+                <label>密码：</label>
+                <input type="password" id="loginPwd" placeholder="请输入密码">
+            </div>
+            <div class="error-tip" id="loginError"></div>
+            <button class="modal-btn" onclick="login()">登录</button>
+        </div>
+
+        <!-- 注册面板 -->
+        <div class="modal-panel" id="registerPanel" style="display: none;">
+            <h3>用户注册</h3>
+            <div class="form-group">
+                <label>用户名：</label>
+                <input type="text" id="regUser" placeholder="请设置用户名">
+            </div>
+            <div class="form-group">
+                <label>密码：</label>
+                <input type="password" id="regPwd" placeholder="请设置密码（6位以上）">
+            </div>
+            <div class="form-group">
+                <label>确认密码：</label>
+                <input type="password" id="regPwdConfirm" placeholder="请再次输入密码">
+            </div>
+            <div class="error-tip" id="regError"></div>
+            <button class="modal-btn" onclick="register()">注册</button>
+        </div>
+    </div>
+</div>
+
+<!-- 登录状态显示（追加到header的top-nav后） -->
+
+
+<!-- JS逻辑（body最后） -->
+<script>
+    // 1. 弹窗基础控制
+    function openModal() {
+        document.getElementById('loginModal').style.display = 'block';
+    }
+    function closeModal() {
+        document.getElementById('loginModal').style.display = 'none';
+        // 清空错误提示和表单
+        document.getElementById('loginError').textContent = '';
+        document.getElementById('regError').textContent = '';
+        document.getElementById('loginUser').value = '';
+        document.getElementById('loginPwd').value = '';
+        document.getElementById('regUser').value = '';
+        document.getElementById('regPwd').value = '';
+        document.getElementById('regPwdConfirm').value = '';
+    }
+
+    // 2. 切换登录/注册标签
+    function switchTab(type) {
+        // 切换标签样式
+        const tabs = document.querySelectorAll('.modal-tabs .tab');
+        tabs.forEach(tab => tab.classList.remove('active'));
+        event.target.classList.add('active');
+        
+        // 切换面板
+        document.getElementById('loginPanel').style.display = type === 'login' ? 'block' : 'none';
+        document.getElementById('registerPanel').style.display = type === 'register' ? 'block' : 'none';
+        // 清空错误提示
+        document.getElementById('loginError').textContent = '';
+        document.getElementById('regError').textContent = '';
+    }
+
+    // 3. 注册功能（本地存储）
+    function register() {
+        const username = document.getElementById('regUser').value.trim();
+        const pwd = document.getElementById('regPwd').value.trim();
+        const pwdConfirm = document.getElementById('regPwdConfirm').value.trim();
+        const regError = document.getElementById('regError');
+
+        // 表单验证
+        if (!username) {
+            regError.textContent = '用户名不能为空！';
+            return;
+        }
+        if (pwd.length < 6) {
+            regError.textContent = '密码长度需≥6位！';
+            return;
+        }
+        if (pwd !== pwdConfirm) {
+            regError.textContent = '两次密码输入不一致！';
+            return;
+        }
+
+        // 读取本地存储的用户信息（JSON格式）
+        let users = JSON.parse(localStorage.getItem('userList')) || [];
+        // 检查用户名是否已存在
+        const isExist = users.some(user => user.username === username);
+        if (isExist) {
+            regError.textContent = '用户名已存在！';
+            return;
+        }
+
+        // 新增用户并存入本地存储
+        users.push({ username, password: pwd });
+        localStorage.setItem('userList', JSON.stringify(users));
+        
+        // 提示+切回登录面板
+        regError.textContent = '';
+        alert('注册成功！请登录');
+        switchTab('login');
+    }
+
+    // 4. 登录功能（本地存储比对）
+    function login() {
+        const username = document.getElementById('loginUser').value.trim();
+        const pwd = document.getElementById('loginPwd').value.trim();
+        const loginError = document.getElementById('loginError');
+
+        // 表单验证
+        if (!username || !pwd) {
+            loginError.textContent = '用户名/密码不能为空！';
+            return;
+        }
+
+        // 读取本地用户列表
+        let users = JSON.parse(localStorage.getItem('userList')) || [];
+        // 比对用户信息
+        const user = users.find(u => u.username === username && u.password === pwd);
+        if (!user) {
+            loginError.textContent = '用户名或密码错误！';
+            return;
+        }
+
+        // 登录成功：记录登录态、更新UI、关闭弹窗
+        localStorage.setItem('currentUser', username);
+        updateLoginStatus();
+        closeModal();
+        alert(`欢迎回来，${username}！`);
+    }
+
+    // 5. 退出登录
+    function logout() {
+        localStorage.removeItem('currentUser');
+        updateLoginStatus();
+        alert('已退出登录！');
+    }
+
+    function updateLoginStatus() {
+        const currentUser = localStorage.getItem('currentUser');
+        const loginStatus = document.getElementById('loginStatus');
+        const loginBtn = document.getElementById('loginBtn');
+        const logoutBtn = document.getElementById('logoutBtn');
+
+        if (currentUser) {
+            loginStatus.textContent = `当前登录：${currentUser}`;
+            loginBtn.style.display = 'none';
+            logoutBtn.style.display = 'inline-block';
+        } else {
+            loginStatus.textContent = '未登录';
+            loginBtn.style.display = 'inline-block';
+            logoutBtn.style.display = 'none';
+        }
+    }
+
+    // 页面加载时初始化登录状态
+    window.onload = function() {
+        updateLoginStatus();
+        // 点击弹窗外部关闭
+        window.onclick = function(event) {
+            const modal = document.getElementById('loginModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    }
+</script>
+</body>
+</html>
